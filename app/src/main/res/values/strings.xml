@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Meater</string>
+    <string name="shutter_button">Shutter Button</string>
+    <string name="result">Result</string>
+</resources>
