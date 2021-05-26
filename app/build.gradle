@@ -46,6 +46,8 @@ dependencies {
     implementation "androidx.camera:camera-lifecycle:$cameraxVersion"
     implementation "androidx.camera:camera-view:$cameraxViewVersion"
     implementation "com.github.bumptech.glide:glide:$glideVersion"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit2Version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit2Version"
 
     //Testing
     testImplementation 'junit:junit:4.+'

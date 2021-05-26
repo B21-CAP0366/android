@@ -34,4 +34,5 @@ ext {
     materialVersion = '1.3.0'
     constraintVersion = '2.0.4'
     glideVersion = '4.11.0'
+    retrofit2Version = '2.6.2'
 }
