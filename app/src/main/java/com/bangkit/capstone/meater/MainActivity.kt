@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bangkit.capstone.meater.databinding.ActivityMainBinding
 import com.bangkit.capstone.meater.ui.CameraActivity
+import com.bangkit.capstone.meater.ui.ResultActivity
 
 class MainActivity : AppCompatActivity() {
 

@@ -2,4 +2,7 @@
     <string name="app_name">Meater</string>
     <string name="shutter_button">Shutter Button</string>
     <string name="result">Result</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="pick_picture">Pick From Gallery</string>
+    <string name="display_result">The Result will Be Displayed Here</string>
 </resources>

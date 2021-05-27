@@ -7,6 +7,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageCapture
@@ -44,6 +45,9 @@ class CameraActivity : AppCompatActivity() {
 
         binding = ActivityCameraBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        //setSupportActionBar(binding.toolbar)
+        //supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         //request Camera Permission
         if (allPermissionGranted()) {
