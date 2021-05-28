@@ -1,22 +1,21 @@
-package com.bangkit.capstone.meater.ui
+package com.bangkit.capstone.meater.ui.camera
 
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.widget.Toast
-import androidx.camera.core.CameraSelector
-import androidx.camera.core.ImageCapture
-import androidx.camera.core.ImageCaptureException
-import androidx.camera.core.Preview
+import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.bangkit.capstone.meater.databinding.ActivityCameraBinding
+import com.bangkit.capstone.meater.ui.result.ResultActivity
 import java.io.File
 import java.lang.Exception
 import java.text.SimpleDateFormat
@@ -27,6 +26,7 @@ import java.util.concurrent.Executors
 class CameraActivity : AppCompatActivity() {
 
     private var imageCapture: ImageCapture? = null
+    private var bitmap: Bitmap? = null
 
     private lateinit var outputDirectory: File
     private lateinit var cameraExecutor: ExecutorService
@@ -130,6 +130,7 @@ class CameraActivity : AppCompatActivity() {
 
         // Set up image capture listener, which is triggered after photo has
         // been taken
+
         imageCapture.takePicture(
             outputOptions, ContextCompat.getMainExecutor(this), object : ImageCapture.OnImageSavedCallback {
                 override fun onError(exc: ImageCaptureException) {
@@ -138,11 +139,15 @@ class CameraActivity : AppCompatActivity() {
                 }
 
                 override fun onImageSaved(output: ImageCapture.OutputFileResults) {
+
+                    bitmap = BitmapFactory.decodeFile(photoFile.absolutePath)
+
                     //When the Image is successfully saved
                     val savedUri = Uri.fromFile(photoFile)
                     val msg = "Photo capture succeeded: $savedUri"
                     Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
                     Log.d("TAG", msg)
+
 
                     //Move To Result
                     val intent = Intent(this@CameraActivity, ResultActivity::class.java)
@@ -152,6 +157,7 @@ class CameraActivity : AppCompatActivity() {
             }
         )
     }
+
 
     override fun onDestroy() {
         super.onDestroy()

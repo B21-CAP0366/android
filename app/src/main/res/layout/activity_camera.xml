@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:theme="@style/Theme.Meater.NoActionBar"
     android:orientation="vertical"
-    tools:context=".ui.CameraActivity"
+    tools:context=".ui.camera.CameraActivity"
     android:fitsSystemWindows="true">
 
     <androidx.camera.view.PreviewView

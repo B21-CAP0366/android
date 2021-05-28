@@ -15,10 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Meater"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.ResultActivity"></activity>
-        <activity android:name=".ui.CameraActivity"
+        <activity android:name=".ui.result.ResultActivity"
+            android:theme="@style/translucentStatusBar"/>
+        <activity android:name=".ui.camera.CameraActivity"
             android:theme="@style/Theme.Meater.NoActionBar"/>
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.home.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

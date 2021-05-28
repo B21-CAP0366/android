@@ -1,11 +1,10 @@
-package com.bangkit.capstone.meater
+package com.bangkit.capstone.meater.ui.home
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bangkit.capstone.meater.databinding.ActivityMainBinding
-import com.bangkit.capstone.meater.ui.CameraActivity
-import com.bangkit.capstone.meater.ui.ResultActivity
+import com.bangkit.capstone.meater.ui.camera.CameraActivity
 
 class MainActivity : AppCompatActivity() {
 

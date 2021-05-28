@@ -5,4 +5,5 @@
     <string name="open_camera">Open Camera</string>
     <string name="pick_picture">Pick From Gallery</string>
     <string name="display_result">The Result will Be Displayed Here</string>
+    <string name="dummy_percentage">100%</string>
 </resources>
