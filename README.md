@@ -23,6 +23,22 @@ Make sure that you have configured your android device or emulator [Click here t
 If you want to learn more about how to Implement TensorFlow Model on Android you can visit [this link](https://codelabs.developers.google.com/codelabs/recognize-flowers-with-tensorflow-on-android).
 
 ## Screenshoot
+> Homepage
+  <image align="center" src="https://user-images.githubusercontent.com/45809461/120369577-0db49e80-c346-11eb-9be2-94bc691d91c5.jpg" width="360" height="800">
+  <br>
+  
+> Camera
+  <image align="center" src="https://user-images.githubusercontent.com/45809461/120370538-47d27000-c347-11eb-8af5-54f96ed5a29a.jpg" width="360" height="800">
+  <br>
+   
+> Result Fresh 
+  <image src="https://user-images.githubusercontent.com/45809461/120371641-ad732c00-c348-11eb-9b42-39ab93aa594e.jpg" width="360" height="800">
+    <br>
+  
+    
+> Result Spoiled
+  <image src="https://user-images.githubusercontent.com/45809461/120372722-1c04b980-c34a-11eb-9ffc-d72e2e6ab39e.jpg" width="360" height="800">
+  
 
 ## Library Used In this Project
 * [Retrofit](https://square.github.io/retrofit/). 
