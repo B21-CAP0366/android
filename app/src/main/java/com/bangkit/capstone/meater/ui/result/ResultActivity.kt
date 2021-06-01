@@ -9,6 +9,7 @@ import android.provider.MediaStore
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bangkit.capstone.meater.R
 import com.bangkit.capstone.meater.databinding.ActivityResultBinding
 import com.bangkit.capstone.meater.ml.MeatModel
 import com.bangkit.capstone.meater.util.ViewModelFactory
@@ -38,6 +39,7 @@ class ResultActivity : AppCompatActivity() {
         setSupportActionBar(activityResultBinding.toolbar)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = getString(R.string.result)
 
         val factory = ViewModelFactory.getInstance(application)
         resultViewModel = ViewModelProvider(this, factory).get(ResultViewModel::class.java)
@@ -53,9 +55,10 @@ class ResultActivity : AppCompatActivity() {
 
         }
 
+        //Bottom Sheet Set-up
         BottomSheetBehavior.from(activityResultBinding.bottomSheet).apply {
-            this.state = BottomSheetBehavior.STATE_COLLAPSED
-            this.setPeekHeight(550)
+            this.state = BottomSheetBehavior.STATE_EXPANDED
+            this.peekHeight = 200
         }
     }
 
@@ -123,7 +126,8 @@ class ResultActivity : AppCompatActivity() {
         }
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

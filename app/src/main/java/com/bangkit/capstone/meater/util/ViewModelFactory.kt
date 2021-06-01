@@ -3,29 +3,37 @@ package com.bangkit.capstone.meater.util
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.bangkit.capstone.meater.di.Injection
+import com.bangkit.capstone.meater.data.source.AppRepository
 import com.bangkit.capstone.meater.ui.result.ResultViewModel
-import java.lang.IllegalArgumentException
+import com.bangkit.capstone.meater.ui.home.NewsViewModel
 
-class ViewModelFactory private constructor(private val mApplication: Application) : ViewModelProvider.NewInstanceFactory() {
-    companion object {
+class ViewModelFactory private constructor(private val appRepository: AppRepository, private val mApplication: Application):
+    ViewModelProvider.NewInstanceFactory(){
+
+    companion object{
         @Volatile
-        private var INSTANCE: ViewModelFactory? = null
+        private var instance: ViewModelFactory? = null
 
-        @JvmStatic
-        fun getInstance(application: Application): ViewModelFactory {
-            if (INSTANCE == null) {
-                synchronized(ViewModelFactory::class.java) {
-                    INSTANCE = ViewModelFactory(application)
-                }
+        fun getInstance(application: Application): ViewModelFactory =
+            instance ?: synchronized(this){
+                instance ?: ViewModelFactory(Injection.provideRepository(), application)
             }
-            return INSTANCE as ViewModelFactory
-        }
     }
 
+    @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(ResultViewModel::class.java)) {
-            return ResultViewModel(mApplication) as T
+        return when{
+
+            modelClass.isAssignableFrom(NewsViewModel::class.java) -> {
+                NewsViewModel(appRepository) as T
+            }
+
+            modelClass.isAssignableFrom(ResultViewModel::class.java) -> {
+                ResultViewModel(mApplication) as T
+            }
+
+            else -> throw Throwable("Unknown ViewModel class: " + modelClass.name)
         }
-        throw IllegalArgumentException("Unknown ViewModel Class : ${modelClass.name}")
     }
 }

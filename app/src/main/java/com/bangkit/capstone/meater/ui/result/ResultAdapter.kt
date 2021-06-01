@@ -1,13 +1,12 @@
 package com.bangkit.capstone.meater.ui.result
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bangkit.capstone.meater.databinding.ItemResultBinding
 import com.bangkit.capstone.meater.util.RecognitionEntity
 
-class ResultAdapter() : RecyclerView.Adapter<ResultAdapter.ResultViewHolder>() {
+class ResultAdapter : RecyclerView.Adapter<ResultAdapter.ResultViewHolder>() {
     private var listResult = ArrayList<RecognitionEntity>()
 
     fun setResult(result: List<RecognitionEntity>?) {
@@ -28,15 +27,13 @@ class ResultAdapter() : RecyclerView.Adapter<ResultAdapter.ResultViewHolder>() {
 
     override fun getItemCount(): Int {
         return listResult.size
-        Log.d("TAG", "listResult.size: $itemCount")
-        Log.d("TAG", "listResult.size 2nd: ${listResult.size}")
     }
 
     class ResultViewHolder(private val binding: ItemResultBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(result: RecognitionEntity){
             with(binding) {
-                tvResult.setText(result.label)
-                tvPercentage.setText(result.confidence)
+                tvResult.text = result.label
+                tvPercentage.text = result.confidence
             }
         }
 
