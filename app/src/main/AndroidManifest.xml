@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+
     <uses-feature android:name="android.hardware.camera.any" />
 
     <application
@@ -15,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Meater"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.ResultActivity"></activity>
+        <activity android:name=".ui.ResultActivity" />
         <activity android:name=".ui.CameraActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_news"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
+    android:layout_marginStart="4dp"
+    android:layout_marginEnd="4dp"
+    android:orientation="vertical"
+    android:padding="8dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ic_news"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_margin="1dp"
+        app:cardElevation="50dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_cv_photo"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@color/cardview_dark_background"
+                android:scaleType="centerCrop"
+                tools:ignore="ContentDescription"/>
+
+            <TextView
+                android:id="@+id/tv_cv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textAlignment="center"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:fontFamily="sans-serif-black"/>
+
+            <TextView
+                android:id="@+id/tv_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:maxLines="5"
+                android:text="Description"
+                android:textSize="11sp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-medium" />
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

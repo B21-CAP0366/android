@@ -35,4 +35,7 @@ ext {
     constraintVersion = '2.0.4'
     glideVersion = '4.11.0'
     retrofit2Version = '2.6.2'
+    recyclerViewVersion = '1.1.0'
+    lifecycleVersion = '2.2.0'
+    cardviewVersion = '1.0.0'
 }

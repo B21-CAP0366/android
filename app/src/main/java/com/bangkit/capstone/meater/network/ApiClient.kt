@@ -3,13 +3,22 @@ package com.bangkit.capstone.meater.network
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object ApiClient {
-    private const val BASE_URL = "url api meater"
+class ApiClient {
 
-    val retrofitBuilder = Retrofit.Builder()
-        .baseUrl(BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
+    companion object {
 
-    val apiInstance = retrofitBuilder.create(InterfaceApi::class.java)
+        private const val BASE_URL = "https://backend-meater-3jtx22rw2a-as.a.run.app/"
+
+        fun getApi(): InterfaceApi {
+
+            val retrofitBuilder = Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+
+            return retrofitBuilder.create(InterfaceApi::class.java)
+        }
+
+    }
+
 }
